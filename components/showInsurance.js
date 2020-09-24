@@ -205,6 +205,7 @@ export class showInsurance extends Component {
         this.setState({ newRequestFormLoading: false });
         return;
       }
+    }
 
 
           const address1 = new web3.eth.Contract(
