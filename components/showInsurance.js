@@ -207,7 +207,6 @@ export class showInsurance extends Component {
       }
 
 
-        try {
           const address1 = new web3.eth.Contract(
             ins.abi,
             this.state.deployedAddress
@@ -219,13 +218,7 @@ export class showInsurance extends Component {
               this.state.newDetails
             )
             .send({ from: accounts[0], gas: 9999999, gasPrice: "40000000000" });
-        } catch (err) {
-          this.setState({
-            errorMessage: err.message,
-            newRequestFormLoading: false,
-          });
-          return;
-        }
+        
       
       this.refreshData();
       this.setState({ newRequestFormLoading: false });
